@@ -4,7 +4,7 @@ from qiskit import Aer
 from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
 
-
+# Función que se encarga de convertir un número decimal a binario
 def DecToBinary(n):
     string = ""
     while n != 0:
@@ -15,15 +15,7 @@ def DecToBinary(n):
         string = "0" + string
     return string
 
-
-def BinarytoDec(string):
-    n = 0
-    for i in range(len(string)):
-        if string[i] == "1":
-            n += 2 ** int(i)
-    return n
-
-
+# Función que construye las matrices de acuerdo a la función que se está implementando
 def buildMatrix(cond0 = False, cond1 = False, cond2 = False, cond3 = False):
     matrix = []
     if cond0:
@@ -54,14 +46,15 @@ def buildMatrix(cond0 = False, cond1 = False, cond2 = False, cond3 = False):
                     matrix[i - 1][j] = "1"
     return matrix
 
-
+# Función que imprime con formato a una matriz
 def printMatrix(matrix):
     for i in matrix:
         print(" ".join(i))
     print()
 
-
+# Ejecución del programa principal realizando pruebas con algunos qubits para verificar que la función no es constante
 def main():
+    # Primera Función
     print("Función constante todos los qubits a 0")
     print()
     print("Matriz")
@@ -83,7 +76,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Segunda Función
     print("Función Balanceada No 1 Cambia si el bit No 1 es 1")
     print()
     print("Matriz")
@@ -102,7 +95,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Tercera Función
     print("Función Balanceada No 2 Cambia si el bit No 2 es 1")
     print()
     print("Matriz")
@@ -121,7 +114,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Cuarta Función
     print("Función Balanceada No 3 Cambia si el bit No 3 es 1")
     print()
     print("Matriz")

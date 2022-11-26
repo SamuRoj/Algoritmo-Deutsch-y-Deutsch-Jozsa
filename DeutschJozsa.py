@@ -5,14 +5,17 @@ from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
 
 
+# Esta función se encarga de verificar si la función dada es balanceada o constante
 def balanced_constant(counts):
     if '0000' in counts.keys():
         print("La función es constante")
     else:
         print("La función es balanceada")
 
-
+# Ejecución del programa principal aplicando el algoritmo de Deutsch-Jozsa a cada una de las funciones que se encuentran en
+# el archivo FunctionsJozsa.py
 def main():
+    # Primera Función
     print("Función Constante")
     simulator = Aer.get_backend('qasm_simulator')
     circuit = QuantumCircuit(5, 4)
@@ -44,7 +47,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Segunda Función
     print("Función Balanceada No 1")
     simulator = Aer.get_backend('qasm_simulator')
     circuit = QuantumCircuit(5, 4)
@@ -72,7 +75,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Tercera Función
     print("Función Balanceada No 2")
     simulator = Aer.get_backend('qasm_simulator')
     circuit = QuantumCircuit(5, 4)
@@ -100,7 +103,7 @@ def main():
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
+    # Cuarta Función
     print("Función Balanceada No 3")
     simulator = Aer.get_backend('qasm_simulator')
     circuit = QuantumCircuit(5, 4)
