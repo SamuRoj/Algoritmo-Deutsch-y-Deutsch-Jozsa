@@ -1,19 +1,20 @@
-import numpy as np
 from qiskit import QuantumCircuit, transpile
 from qiskit import Aer
 from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
-
+import Functions as Func
 
 # Función que determina si la función ingresada es balanceada o constante
 def balanced_constant(counts):
     if '0' in counts.keys():
-        print("La función es constante")
+        return "Constante"
     else:
-        print("La función es balanceada")
+        return "Balanceada"
 
 # Ejecución de las pruebas con cada una de las funciones para determinar si es constante o balanceada
-def main():
+def Pruebas():
+    results1 = Func.Pruebas()
+    results2 = []
     print("Verificación de si la función dada es balanceada o constante")
     print()
     print("Pruebas con el algoritmo de Deutsch")
@@ -39,7 +40,8 @@ def main():
     job = simulator.run(compiled_circuit, shots=1000)
     result = job.result()
     counts = result.get_counts(circuit)
-    balanced_constant(counts)
+    print(balanced_constant(counts))
+    results2.append(balanced_constant(counts))
     print(circuit)
     plot_histogram(counts)
     plt.show()
@@ -63,7 +65,8 @@ def main():
     job = simulator.run(compiled_circuit, shots=1000)
     result = job.result()
     counts = result.get_counts(circuit)
-    balanced_constant(counts)
+    print(balanced_constant(counts))
+    results2.append(balanced_constant(counts))
     print(circuit)
     plot_histogram(counts)
     plt.show()
@@ -89,7 +92,8 @@ def main():
     job = simulator.run(compiled_circuit, shots=1000)
     result = job.result()
     counts = result.get_counts(circuit)
-    balanced_constant(counts)
+    print(balanced_constant(counts))
+    results2.append(balanced_constant(counts))
     print(circuit)
     plot_histogram(counts)
     plt.show()
@@ -113,11 +117,10 @@ def main():
     job = simulator.run(compiled_circuit, shots=1000)
     result = job.result()
     counts = result.get_counts(circuit)
-    balanced_constant(counts)
+    print(balanced_constant(counts))
+    results2.append(balanced_constant(counts))
     print(circuit)
     plot_histogram(counts)
     plt.show()
-
-
-if __name__ == "__main__":
-    main()
+    results1.extend(results2)
+    return results1
