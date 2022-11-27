@@ -59,7 +59,7 @@ Es solo una advertencia para realizar un cambio en el código pero no afectará 
 
 ### Explicación de resultados y ecuaciones
 
-La explicación de los resultados y sus respectivas ecuaciones se encuentran en el archivo `Informe.docx` que se debe descargar y abrir con un editor de texto.
+La explicación de los resultados y sus respectivas ecuaciones se encuentran en el archivo `Informe Deutsch y Deutsch-Jozsa Samuel Rojas.docx` que se debe descargar y abrir con un editor de texto.
 
 ## Realizado con
 
